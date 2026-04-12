@@ -1,0 +1,17 @@
+name: ChaosArcade
+version: 1.0.0
+main: bg.nikol.chaosarcade.ChaosArcadePlugin
+api-version: '1.21'
+author: nikol
+
+commands:
+  arcade:
+    description: ChaosArcade main command
+    usage: /arcade
+    aliases: [chaosarcade, minigames, mg]
+
+permissions:
+  chaosarcade.use:
+    default: true
+  chaosarcade.admin:
+    default: op

@@ -1,0 +1,44 @@
+settings:
+  auto-countdown-seconds: 15
+  send-to-lobby-after-match: false
+
+modes:
+  TNT_TAG:
+    fuse-seconds: 60
+  BLOCK_SHUFFLE:
+    round-seconds: 18
+    block-pool:
+      - GRASS_BLOCK
+      - STONE
+      - DIRT
+      - COBBLESTONE
+      - OAK_PLANKS
+      - SAND
+      - GLASS
+      - BRICKS
+      - HAY_BLOCK
+      - IRON_BLOCK
+      - GOLD_BLOCK
+      - DIAMOND_BLOCK
+      - EMERALD_BLOCK
+      - WHITE_WOOL
+      - RED_WOOL
+      - BLUE_WOOL
+      - BLACK_CONCRETE
+      - YELLOW_CONCRETE
+  KING_OF_THE_HILL:
+    target-points: 100
+    points-per-second: 5
+  INFECTION:
+    duration-seconds: 150
+  COLLAPSE_ARENA:
+    remove-delay-ticks: 8
+  MINING_RUSH:
+    duration-seconds: 120
+  ABILITY_BRAWL:
+    target-kills: 8
+    roll-seconds: 20
+
+lobby: null
+
+arenas: {}
