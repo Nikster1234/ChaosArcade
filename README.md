@@ -78,6 +78,36 @@ Recommended first-time setup flow:
 
 If `/arcade join <mode>` says the mode has no ready arena yet, run `/arcade arena <mode> info <id>` and fix the missing setup fields.
 
+## Admin Workflow
+
+Recommended day-to-day admin workflow:
+
+1. Join as an operator or a player with `chaosarcade.admin`.
+2. Confirm the shared lobby exists with:
+   - `/arcade setlobby`
+   - Run it again if you move the lobby later.
+3. Create one arena per mode you want to enable first.
+4. Use `/arcade arena <mode> info <id>` after every setup step until the arena reports as ready.
+5. Test the queue flow with:
+   - `/arcade join <mode>`
+   - `/arcade leave`
+6. When enough players are queued, use:
+   - `/arcade forcestart`
+   if you want to bypass the normal queue wait.
+7. If a match gets stuck or you need to reset the state, use:
+   - `/arcade stop`
+8. After changing config values or editing saved arena data, run:
+   - `/arcade reload`
+
+Practical order for a fresh server:
+
+1. Set the lobby.
+2. Finish one fully working arena for one mode.
+3. Test that mode end-to-end.
+4. Only then create the next mode arena.
+
+That workflow makes it easier to catch missing spawn points, center/radius settings, or region corners before opening multiple queues.
+
 ## Arena Setup Commands
 
 General admin commands:
@@ -167,8 +197,20 @@ Example setup for `COLLAPSE_ARENA` or `MINING_RUSH`:
 
 - `chaosarcade.use`
   - Default: `true`
+  - Allows players to open `/arcade`, join queues, leave queues, and use the normal player flow.
 - `chaosarcade.admin`
   - Default: `op`
+  - Allows setup and control commands such as lobby setup, arena creation, arena editing, reload, force start, and stop.
+
+Recommended usage:
+
+- regular players
+  - `chaosarcade.use`
+- server staff / builders / admins
+  - `chaosarcade.use`
+  - `chaosarcade.admin`
+
+If you use a permissions plugin, grant `chaosarcade.admin` only to trusted staff because it controls arena data and live match flow.
 
 ## Configuration
 
